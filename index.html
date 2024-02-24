@@ -46,20 +46,55 @@
             /* margin: 20px; /* Add some margin between images */
             /* padding: 20px; */
         }
+
+        body {
+            height: 100vh;
+            margin: 0;
+        }
+
+        .d-flex {
+            display: flex;
+            align-items: center;
+            overflow-x: scroll;
+            width: 100vw; /* Make sure the container is as wide as the viewport */
+        }
+
+        .card {
+            flex: 0 0 100%; /* Each card occupies the full width of the container */
+            max-width: 100%;
+        }
+
+        .card img {
+            width: 100%; /* Make the image fill the card */
+        }
     </style>
 </head>
 <body>
-    <div class="image-container ">
-        <!-- <img src="images/1.jpg" alt=""> -->
-        <img id="image1" src="images/1.jpg" alt="">
+    <!-- <div class="image-container card-body">
+            <img id="image1" class="card-img-top" src="images/1.jpg" alt="Card image cap">
+        <img id="image1" src="images/.jpg" alt="">
         <img id="image2" src="images/2.jpg" alt="">
         <img id="image3" src="images/3.jpg" alt="">
+        <img id="image4" src="images/4.png" alt="" onClick="redirecturl()">
+    </div> -->
 
-
-            <img id="image4" src="images/4.png" alt="" onClick="redirecturl()">
- 
-     
-    </div>
+    <div class="d-flex" style="height:100%">
+        <div class="d-flex">
+            <div class="card">
+                <img id="image1" class="card-img-top" src="images/1.jpg" alt="Card image cap">
+            </div>
+            <div class="card">
+                <img id="image2" class="card-img-top" src="images/2.jpg" alt="Card image cap">
+            </div>
+            <div class="card">
+                <img id="image3" class="card-img-top" src="images/3.jpg" alt="Card image cap">
+            </div>
+            <div class="card" onClick="redirecturl()">
+                <img id="image4" class="card-img-top" src="images/4.png" alt="Card image cap">
+            </div>
+            <!-- Add more cards as needed -->
+        </div>
+       </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
@@ -81,7 +116,7 @@
         else{
             currentimage+=1
         }
-        console.log(`image${currentimage}`)
+        // console.log(`image${currentimage}`)
         document.body.style.backgroundImage = `url('images/${currentimage-1}.jpg')`;
         // document.body.style.backgroundSize = 'cover';
 
