@@ -32,9 +32,9 @@
 
       <script>
         function copyText() {
-          const inputText = document.getElementById("inputText");
-          const textToCopy = `https://asuravann.github.io/Aishwarya-Eswar/?${inputText.value}`;
-    
+          const inputText = document.getElementById("inputText").value;
+          let inputText1=inputText.replace(' ','%20')
+          const textToCopy = `https://asuravann.github.io/Aishwarya-Eswar/?${inputText1}`;
           navigator.clipboard.writeText(textToCopy)
             .then(() => {
               alert("Text copied successfully!");
