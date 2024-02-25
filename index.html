@@ -140,6 +140,7 @@ i.arrow{
     }
     let imageredirect=(imagename)=>{
         document.getElementById(imagename).scrollIntoView({ behavior: "smooth" });
+        clearInterval(test)
     }
     let username=''
     const searchParams = new URLSearchParams(window.location.search);
@@ -158,23 +159,23 @@ i.arrow{
   }
     document.body.style.backgroundImage = `url('images/waterdrops.jpg')`;
     document.getElementsByClassName('card-body')[0].style=`backgroundImage:"images/waterdrops.jpg"`;
-    // let currentimage=1
-    // // let intervaltime=100
-    // let test=setInterval(()=>{
-    //     // intervaltime=2500
-    //     document.getElementById(`image${currentimage}`).scrollIntoView({ behavior: "smooth" });
-    //     if(currentimage>3){
-    //         currentimage=1
-    //         clearInterval(test)
-    //     }
-    //     else{
-    //         currentimage+=1
-    //     }
-    //     // console.log(`image${currentimage}`)
-    //     document.body.style.backgroundImage = `url('images/${currentimage-1}.jpg')`;
-    //     // document.body.style.backgroundSize = 'cover';
+    let currentimage=1
+    // let intervaltime=100
+    let test=setInterval(()=>{
+        // intervaltime=2500
+        document.getElementById(`image${currentimage}`).scrollIntoView({ behavior: "smooth" });
+        if(currentimage>3){
+            currentimage=1
+            clearInterval(test)
+        }
+        else{
+            currentimage+=1
+        }
+        // console.log(`image${currentimage}`)
+        document.body.style.backgroundImage = `url('images/${currentimage-1}.jpg')`;
+        // document.body.style.backgroundSize = 'cover';
 
-    // },3000)
+    },3000)
     
 </script>
 </body>
